@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+:root {
+  --SOFT-BLUE: hsl(215, 51%, 70%);
+  --CYAN: hsl(178, 100%, 50%);
+
+  --BGCOLOR: hsl(217, 54%, 11%);
+  --CARD-BGCOLOR: hsl(216, 50%, 16%);
+  --LINE-COLOR: hsl(215, 32%, 27%);
+  --WHITE: hsl(0, 0%, 100%);
+
+  --FS: 18px;
+  --FF: Outfit, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--BGCOLOR);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--WHITE);
+  padding: 25px;
+}
+
+.card {
+  max-width: 350px;
+  background-color: var(--CARD-BGCOLOR);
+  padding: 24px;
+  font-family: var(--FF);
+  border-radius: 15px;
+  box-shadow: 0px 20px 25px 15px rgba(0, 0, 0, 0.05),
+    0px 40px 30px 15px rgba(0, 0, 0, 0.01);
+}
+
+.card__img img {
+  border-radius: 15px;
+}
+
+.card__h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 36px;
+}
+
+.card__p {
+  font-family: var(--FF);
+  font-weight: 300;
+  color: var(--SOFT-BLUE);
+  margin-top: 18px;
+}
+
+.card__price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-top: 36px;
+  border-bottom: 1px solid var(--LINE-COLOR);
+  padding-bottom: 32px;
+}
+
+.card__price__info {
+  display: flex;
+  color: var(--CYAN);
+  align-items: center;
+}
+
+.card__price__info p {
+  margin-left: 10px;
+}
+
+.card__price__time {
+  display: flex;
+  align-items: center;
+  color: var(--SOFT-BLUE);
+}
+
+.card__price__time p {
+  margin-left: 10px;
+}
+
+.card__creator {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card__creator img {
+  width: 36px;
+  height: 36px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.card__creator p {
+  margin-left: 15px;
+  color: var(--WHITE);
+}
+
+.card__creator p span.soft_blue {
+  color: var(--SOFT-BLUE);
+}
+
+/* ACTIVE STYLES */
+
+.card__creator p span.creator__name:hover {
+  color: var(--CYAN);
+}
+.card__h1:hover {
+  color: var(--CYAN);
+}
+
+.card__img {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card__img::after {
+  --CYAN: hsl(178, 100%, 50%, 0.5);
+  content: url(./images/icon-view.svg);
+  background: var(--CYAN);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.25s ease;
+  border-radius: 15px;
+}
+
+.card__img:hover::after {
+  opacity: 1;
+}
