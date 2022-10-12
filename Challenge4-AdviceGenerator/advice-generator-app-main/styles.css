@@ -75,7 +75,7 @@ p.advice-id {
   /* top: 0; */
   /* left: 0; */
   /* left: 220px; */
-  left: calc(50% - 2rem);
+  left: calc(50% - 1.85rem);
 }
 
 .advice-generator-button:hover,
