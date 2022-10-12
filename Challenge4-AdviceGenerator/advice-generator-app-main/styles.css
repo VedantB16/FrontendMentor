@@ -72,7 +72,10 @@ p.advice-id {
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 145px;
+  /* top: 0; */
+  /* left: 0; */
+  /* left: 220px; */
+  left: calc(50% - 2rem);
 }
 
 .advice-generator-button:hover,
@@ -83,9 +86,5 @@ p.advice-id {
 @media screen and (width >= 550px) {
   .advice-card {
     width: 540px;
-  }
-
-  .advice-generator-button {
-    left: 240px;
   }
 }
